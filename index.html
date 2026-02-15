@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Knowledge Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>try{if(localStorage.getItem('ultimateQuizTheme')==='dark')document.body.classList.add('dark-mode');}catch(e){}</script>
+    <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <span class="theme-icon sun">☀️</span>
+        <span class="theme-icon moon">🌙</span>
+    </button>
+    <div class="app-wrapper">
+        <!-- ========== 1. HOME SCREEN - CATEGORY SELECTION ========== -->
+        <section class="screen active" id="homeScreen">
+            <h1 class="main-title">ULTIMATE KNOWLEDGE QUIZ</h1>
+            <p class="subtitle">Choose a category to begin</p>
+
+            <div class="home-categories">
+            <div class="category-section">
+                <h2 class="section-label">1. ACADEMIC</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="science">
+                        <span class="card-icon">🔬</span>
+                        <span class="card-name">Science</span>
+                    </div>
+                    <div class="category-card" data-category="mathematics">
+                        <span class="card-icon">📐</span>
+                        <span class="card-name">Mathematics</span>
+                    </div>
+                    <div class="category-card" data-category="computer">
+                        <span class="card-icon">💻</span>
+                        <span class="card-name">Computer</span>
+                    </div>
+                    <div class="category-card" data-category="english">
+                        <span class="card-icon">📝</span>
+                        <span class="card-name">English</span>
+                    </div>
+                    <div class="category-card" data-category="socialStudies">
+                        <span class="card-icon">🏛️</span>
+                        <span class="card-name">Social Studies</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="section-label">2. SPORTS</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="football">
+                        <span class="card-icon">⚽</span>
+                        <span class="card-name">Football</span>
+                    </div>
+                    <div class="category-card" data-category="cricket">
+                        <span class="card-icon">🏏</span>
+                        <span class="card-name">Cricket</span>
+                    </div>
+                    <div class="category-card" data-category="basketball">
+                        <span class="card-icon">🏀</span>
+                        <span class="card-name">Basketball</span>
+                    </div>
+                    <div class="category-card" data-category="olympics">
+                        <span class="card-icon">🏅</span>
+                        <span class="card-name">Olympics</span>
+                    </div>
+                    <div class="category-card" data-category="sportsGeneral">
+                        <span class="card-icon">⚾</span>
+                        <span class="card-name">Sports General</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="section-label">3. NEPAL</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="nepal">
+                        <span class="card-icon">🇳🇵</span>
+                        <span class="card-name">Nepal</span>
+                    </div>
+                    <div class="category-card" data-category="nepalHistory">
+                        <span class="card-icon">📜</span>
+                        <span class="card-name">Nepal's History</span>
+                    </div>
+                    <div class="category-card" data-category="nepalGeography">
+                        <span class="card-icon">🗺️</span>
+                        <span class="card-name">Nepal Geography</span>
+                    </div>
+                    <div class="category-card" data-category="nepalCulture">
+                        <span class="card-icon">🎭</span>
+                        <span class="card-name">Nepal Culture</span>
+                    </div>
+                    <div class="category-card" data-category="nepalFestivals">
+                        <span class="card-icon">🎉</span>
+                        <span class="card-name">Nepal Festivals</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="section-label">4. ARTS & CULTURE</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="geography">
+                        <span class="card-icon">🌍</span>
+                        <span class="card-name">Geography</span>
+                    </div>
+                    <div class="category-card" data-category="literature">
+                        <span class="card-icon">📚</span>
+                        <span class="card-name">Literature</span>
+                    </div>
+                    <div class="category-card" data-category="music">
+                        <span class="card-icon">🎵</span>
+                        <span class="card-name">Music</span>
+                    </div>
+                    <div class="category-card" data-category="worldHistory">
+                        <span class="card-icon">🏺</span>
+                        <span class="card-name">World History</span>
+                    </div>
+                    <div class="category-card" data-category="artMovies">
+                        <span class="card-icon">🎬</span>
+                        <span class="card-name">Art & Movies</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h2 class="section-label">5. GENERAL</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="nature">
+                        <span class="card-icon">🌿</span>
+                        <span class="card-name">Nature</span>
+                    </div>
+                    <div class="category-card" data-category="space">
+                        <span class="card-icon">🪐</span>
+                        <span class="card-name">Space</span>
+                    </div>
+                    <div class="category-card" data-category="general">
+                        <span class="card-icon">💡</span>
+                        <span class="card-name">General Knowledge</span>
+                    </div>
+                    <div class="category-card" data-category="currentAffairs">
+                        <span class="card-icon">📰</span>
+                        <span class="card-name">Current Affairs</span>
+                    </div>
+                    <div class="category-card" data-category="mixed">
+                        <span class="card-icon">🎲</span>
+                        <span class="card-name">Mixed Challenge</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ========== 2. NAME ENTRY SCREEN ========== -->
+        <section class="screen" id="nameScreen">
+            <h2 class="screen-title">Almost There!</h2>
+            <div class="name-entry-card glass-card">
+                <p class="chosen-category-display">Category: <strong id="chosenCategoryName">—</strong></p>
+                <div class="input-group">
+                    <label for="playerNameInput">Enter your name</label>
+                    <input type="text" id="playerNameInput" placeholder="Your name..." autocomplete="off" maxlength="30">
+                </div>
+                <div class="button-row">
+                    <button type="button" class="btn btn-secondary" id="backFromNameBtn">Back</button>
+                    <button type="button" class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 3. QUIZ SCREEN ========== -->
+        <section class="screen" id="quizScreen">
+            <div class="quiz-top-bar">
+                <div class="top-bar-left">
+                    <span class="top-bar-item" id="quizPlayerName">Player</span>
+                    <span class="top-bar-divider">|</span>
+                    <span class="top-bar-item" id="quizCategoryName">Category</span>
+                </div>
+                <div class="top-bar-center">
+                    <span class="top-bar-item">Question <span id="currentQuestionNum">1</span>/<span id="totalQuestions">10</span></span>
+                </div>
+                <div class="top-bar-right">
+                    <span class="top-bar-item score-display">Score: <span id="quizScore">0</span></span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+
+            <div class="question-area">
+                <h2 class="question-text" id="questionText"></h2>
+                <div class="options-container" id="optionsContainer"></div>
+                <div class="feedback-message" id="feedbackMessage"></div>
+            </div>
+        </section>
+
+        <!-- ========== 4. RESULT SCREEN ========== -->
+        <section class="screen" id="resultScreen">
+            <div id="confettiContainer" class="confetti-container" aria-hidden="true"></div>
+            <h2 class="screen-title">Quiz Completed!</h2>
+            <div class="result-card glass-card">
+                <p class="result-player">Player: <strong id="resultPlayerName">—</strong></p>
+                <p class="result-category">Category: <strong id="resultCategoryName">—</strong></p>
+                <div class="result-score-box">
+                    <span class="result-score" id="resultScore">0</span>
+                    <span class="result-total">/ <span id="resultTotal">10</span></span>
+                </div>
+                <p class="result-percent" id="resultPercent">0%</p>
+                <p class="result-time-taken" id="resultTimeTaken">Time taken: —</p>
+                <p class="motivational-message" id="motivationalMessage">—</p>
+                <div class="button-row">
+                    <button type="button" class="btn btn-primary" id="playAgainBtn">Play Again</button>
+                    <button type="button" class="btn btn-outline" id="changeCategoryBtn">Change Category</button>
+                    <button type="button" class="btn btn-outline" id="viewLeaderboardBtn">View Leaderboard</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 5. LEADERBOARD SCREEN ========== -->
+        <section class="screen" id="leaderboardScreen">
+            <h2 class="screen-title">🏆 Leaderboard</h2>
+            <div class="leaderboard-card glass-card">
+                <div class="leaderboard-filters">
+                    <button type="button" class="filter-btn active" data-filter="all">All</button>
+                    <button type="button" class="filter-btn" data-filter="science">Science</button>
+                    <button type="button" class="filter-btn" data-filter="sports">Sports</button>
+                    <button type="button" class="filter-btn" data-filter="math">Math</button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Filled by script -->
+                        </tbody>
+                    </table>
+                </div>
+                <p class="no-scores-msg" id="noScoresMsg">No scores yet. Be the first!</p>
+                <div class="button-row">
+                    <button type="button" class="btn btn-primary" id="leaderboardBackBtn">Back to Home</button>
+                    <button type="button" class="btn btn-danger" id="clearLeaderboardBtn">Clear Leaderboard</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Load question data first, then main script -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
